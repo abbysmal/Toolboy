@@ -1,0 +1,4 @@
+(library
+ (name lesserboy)
+ (modules mmu joypad uint16 noise cartridge cartridge_internals addressable machine square wave spu uint8)
+(libraries fmt rresult bigarray))

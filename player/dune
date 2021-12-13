@@ -1,0 +1,4 @@
+(executable
+ (name main)
+ (modules main)
+ (libraries bos decompress.gz fpath rresult tsdl vgm lesserboy))

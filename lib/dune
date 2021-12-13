@@ -1,0 +1,4 @@
+(library
+ (name vgm)
+ (modules parser uint8)
+(libraries angstrom bigarray bigstringaf rresult))
