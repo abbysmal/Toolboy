@@ -161,7 +161,7 @@ module Square : sig
     mutable timer : int;
     mutable step : int;
     mutable dac_enabled : bool;
-
+    mutable current_midi : Uint8.t;
   }
 
   val make : [`SC1 | `SC2 ] -> t

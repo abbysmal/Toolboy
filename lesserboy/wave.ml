@@ -22,6 +22,8 @@ let length_tick (t : t) =
   if t.length_counter = 0 && t.length_enable then
     t.enabled <- false
 
+let frequency_msb nr14 = Uint8.(nr14 land inj 0b111)
+
 let step (m : Machine.t) =
   let t = m.sc3 in
   t.timer <- pred t.timer;
@@ -49,7 +51,7 @@ let set t v a =
     t.volume_code <- Uint8.inj shift
   | 0xFF1D ->
     t.frequency_lsb <- v;
-    t.frequency <- (t.frequency land 0x700) lor Uint8.proj v
+    t.frequency <- (t.frequency land 0x700) lor Uint8.proj v;
   | 0xFF1E ->
     t.frequency <- (t.frequency land 0xFF) lor ((Uint8.proj v land 0x7) lsl 8);
     t.length_enable <- Uint8.(v land inj 0x40) = Uint8.inj 0x40;

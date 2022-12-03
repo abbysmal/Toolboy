@@ -1,0 +1,4 @@
+(executable
+ (name main)
+ (modules main)
+ (libraries bos decompress.gz fpath vgm lesserboy portmidi mtime.clock.os))

@@ -1,4 +1,4 @@
 (library
  (name vgm)
- (modules parser uint8)
+ (modules parser uint8 imports sound_table)
 (libraries angstrom bigarray bigstringaf rresult))

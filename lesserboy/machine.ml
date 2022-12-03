@@ -256,6 +256,7 @@ module Square = struct
     mutable timer : int;
     mutable step : int;
     mutable dac_enabled : bool;
+    mutable current_midi : Uint8.t;
   }
 
   let make mode : t = {
@@ -286,6 +287,7 @@ module Square = struct
     sweep_direction = false;
     envelope_timer = Uint8.zero;
     envelope_direction = false;
+    current_midi = Uint8.zero;
   }
 
 end
