@@ -7,20 +7,6 @@ let gb_cycles = 4194304
 let sample_rate = 44100
 let per_sample = gb_cycles / sample_rate
 
-(* let write_midi () =
- *   let m = Bigstringaf.create 24 in
- *   Bigstringaf.set_int32_le m 0 0x6468544dl; (\* midi magic *\)
- *   Bigstringaf.set_int32_be m 4 0x0000006l; (\* header chunk length *\)
- *   Bigstringaf.set_int16_le m 9 0x1; (\* midi format 1 *\)
- *   Bigstringaf.set_int16_le m 11 0x4; (\* 4 tracks *\)
- *   Bigstringaf.set_int16_le m 13 0xc0; (\* tempo *\)
- *   Bigstringaf.set_int32_be m 15 0x4d54726bl;
- *   Bigstringaf.set_int32_be m 15 0x4d54726bl;
- *   Bigstringaf.set_int32_be m 4 0x0000000l; (\* header chunk length *\)
- *   let ch = open_out "test.mid" in
- *   let s = Bigstringaf.to_string m in
- *   output_string ch s *)
-
 let create machine =
   let audio_setup () =
     let desired_audiospec =
